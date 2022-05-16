@@ -1,0 +1,140 @@
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+
+            <div class="content-body">
+                <section id="basic-horizontal-layouts">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <table id="example1" class="col-lg-12 table" cellspacing="0">
+                                        <thead class="thead-dark">
+                                            <tr class="text-center">
+                                                <th>PUESTOS PUBLICADOS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (isset($this->publicacioncab)) { ?>
+                                                <?php foreach ($this->publicacioncab as $pc) { ?>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="col-md-12 col-12">
+                                                                <div class="d-flex justify-content-between flex-md-row flex-column mt-0">
+                                                                    <div>
+                                                                        <p class="card-text mb-0 font-weight-bolder"><?php echo $pc['v_empresa'] ?></p>
+                                                                        <p class="card-text mb-0"><?php echo $pc['v_departamento'] ?>, <?php echo $pc['v_provincia'] ?></p>
+                                                                        <div>
+                                                                            <h3 class="card-text mb-1 text-success"><?php echo $pc['v_titulo'] ?></h3>
+                                                                        </div>
+                                                                        <p class="card-text mb-0"><i class="fas fa-clock"></i>&nbsp;&nbsp;<?php echo $pc['v_jornada'] ?></p>
+                                                                        <p class="card-text mb-0"><i class="fas fa-map-marker-alt"></i></i>&nbsp;&nbsp;<?php echo $pc['v_distrito'] ?>, <?php echo $pc['v_provincia'] ?>, <?php echo $pc['v_pais'] ?></p>
+                                                                    </div>
+                                                                    <div class="mt-md-0 mt-25">
+                                                                        <div class="invoice-date-wrapper">
+                                                                            <p class="invoice-date-title font-weight-bolder">Publicado el <?php echo $pc['d_fecha'] ?></p>
+                                                                        </div>
+                                                                        <div class="d-flex justify-content-end">
+                                                                            <button onclick="clickpuesto('<?php echo $pc['v_codigo'] ?>')" type="button" class="btn round btn-warning">
+                                                                                <i data-feather='eye'></i><span>&nbsp;&nbsp;Revisar puesto</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="div-00">
+                                        <div class="card-header">
+                                            <h4 class="card-title">VERDUM PERÚ S.A.C.</h4>
+                                        </div>
+                                        <!-- <div class="card-body">
+                                            <p class="card-text mb-0"><i class="fas fa-clock"></i>&nbsp;&nbsp;FULL TIME</p>
+                                            <p class="card-text mb-1"><i class="fas fa-map-marker-alt"></i></i>&nbsp;&nbsp;Cercado De Lima, Lima, Peru</p>
+                                            <div>
+                                                <h4 class="card-title mb-1 text-success">JEFE DE SISTEMAS (encargado)</h4>
+                                            </div>
+                                            <div class="media my-1 py-25">
+                                                <div class="media-body">
+                                                    <small class="text font-weight-bolder">portaldistribuidor Verdum</small>
+                                                    <span class="text ml-50 mr-25">|</span>
+                                                    <small class="text font-weight-bolder">Sep 13, 2021</small>
+                                                </div>
+                                            </div>
+                                            <h4 class="mb-1">Descripcion del puesto:</h4>
+                                            <p class="card-text mb-2" style="text-align: justify;">
+                                                Estructurar el presupuesto anual de toda la organización por unidad de negocio y por todas las sucursales y/o niveles del estado ganancia - pérdida.
+                                                Asimismo, efectuar el análisis y evaluaciones de todas las desviaciones presupuestarias por unidad de negocio a nivel nacional.
+                                            </p>
+                                            <hr class="my-1" />
+                                            <h4 class="mb-0">Principales tareas:</h4>
+                                            <ul class="p-2 mb-0" style="text-align: justify;">
+                                                <li>Registro de Ajustes, Recepción de Inventarios en el Sistema.</li>
+                                                <li>Registro de Artículos y Kit en el sistema.</li>
+                                                <li>Inventarios físicos de Almacenes (productos terminados, Insumos, Activos Fijos, Productos en custodia de Marketing).</li>
+                                                <li>Evaluar posibles pérdidas de valor de las existencias y de ser el caso reconocer una provisión por desvalorización.</li>
+                                                <li>Validar los Kardex de suministros, productos en proceso y productos terminados.</li>
+                                                <li>Crear, mejorar o actualizar diversos procesos operativos que tengan impacto en los costos de producción o en el control interno.</li>
+                                                <li>Analizar todos los egresos y clasificarlos como costo o gasto.</li>
+                                                <li>Validación de las Rendiciones de Gastos.</li>
+                                                <li>Validar la consolidación de la distribución de productos vendidos por pedido y centro de responsabilidad para su posterior facturación.</li>
+                                                <li>Supervisar el cumplimiento del Control Presupuestal de las áreas (Centros de Costos).</li>
+                                                <li>Elaborar los estados de costos comparativos (reales vs proyectados).</li>
+                                                <li>Supervisión y control en las variaciones en el costo de producción del PT.</li>
+                                            </ul>
+                                            <hr class="my-1" />
+                                            <h4 class="mb-0">Requerimientos:</h4>
+                                            <ul class="p-2 mb-0" style="text-align: justify;">
+
+                                                <li>Profesional egresado de Ingeniería de Sistemas o afines.</li>
+                                                <li>Conocimientos: Administración de contratos de outsourcing, conocimientos de normas ITIL, COBIT, ISO27001,PMP, conocimientos BA, Conocimientos de networking, SAP, Office 365. Dominio de inglés técnico a nivel intermedio.</li>
+
+                                                <li>Educación mínima: UNIVERSITARIO.</li>
+                                                <li>Nro de vacantes: 1.</li>
+                                                <li>Experiencia mínima: 2 año(s) en puestos similares.</li>
+                                                <li>Disponibilidad para viajar: No</li>
+                                                <li>Disponibilidad para cambiar de residencia: NO</li>
+                                                <li>Personas con discapacidad: SI</li>
+                                                <li>Edad: entre 20 y 50 años.</li>
+
+                                            </ul>
+                                            <hr class="my-1" />
+                                            <h4 class="mb-1">Ofrecemos:</h4>
+                                            <p class="card-text mb-0"><i class="fas fa-chart-line"></i>&nbsp;&nbsp;Línea de carrera.</p>
+                                            <p class="card-text mb-0"><i class="fas fa-money-bill-wave-alt"></i>&nbsp;&nbsp;Salario: de 5,000 hasta 8,000.</p>
+                                            <hr class="my-1" />
+                                            <div class="d-flex justify-content-end">
+                                                <button id="btngrabarmon" onclick="" type="button" class="btn btn-success">
+                                                    <i class="fas fa-angle-double-right"></i><span>&nbsp;&nbsp;Pustularme&nbsp;&nbsp;</span><i class="fas fa-angle-double-left"></i>
+                                                </button>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- END: Content-->

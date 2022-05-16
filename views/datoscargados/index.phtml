@@ -1,0 +1,175 @@
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-left mb-0">
+                                <b><?php foreach ($_SESSION['menus'] as $menu) { ?>
+                                        <?php if ($this->_controlador == $menu['v_link']) {
+                                            echo $menu['v_descripcion'];
+                                        } else {
+                                            '';
+                                        } ?>
+                                    <?php } ?>
+                                </b>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <section class="col-lg-5">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h4 class="card-title text-white"><b>Filtro distribuidor (data duplicada)</b></h4>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <form action="<?php echo BASE_URL ?>datoscargados/cargar_table" method="post">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label class="form-label font-weight-bolder">Distribuidor:</label>
+                                        <select id="ruc" name="ruc" class="select2 form-control form-control-xs">
+                                            <?php echo $this->filas ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-12">
+                                        <button id="btncargar" name="btncargar" type="submit" class="btn btn-success btn-block font-weight-bolder" style="color: White;">
+                                            <i class="fas fa-database"></i><span>&nbsp;&nbsp;Filtrar distribuidor</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-lg-7">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h4 class="card-title text-white"><b>Filtro distribuidor (data duplicada)</b></h4>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="form-label font-weight-bolder">Seleccione Distribuidor:</label>
+                                    <select id="ruc2" name="ruc2" class="select2 form-control form-control-xs">
+                                        <?php echo $this->filas ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-12">
+                                    <button id="btnmasivo" type="submit" class="btn btn-warning btn-block font-weight-bolder" style="color: White;">
+                                        <i class="fas fa-trash-alt"></i><span>&nbsp;&nbsp;Eliminar duplicados x distribuidor</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-12">
+                                    <button id="btnfull" type="submit" class="btn btn-danger btn-block font-weight-bolder" style="color: White;">
+                                        <i class="fas fa-trash-alt"></i><span>&nbsp;&nbsp;Eliminar duplicados totales</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-lg-12">
+                    <div class="card col-12">
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-12 col-12">
+                                    <table id="example1" class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr class="text-center">
+                                                <th># Id</th>
+                                                <th>#</th>
+                                                <th>Código</th>
+                                                <th>Dato</th>
+                                                <th>RUC</th>
+                                                <th>Razon Social</th>
+                                                <th>Fecha</th>
+                                                <th>Código Producto</th>
+                                                <th>Nombre Producto</th>
+                                                <th>Documento Cliente</th>
+                                                <th>Nombre Cliente</th>
+                                                <th>Tipo Cliente</th>
+                                                <th>Departamento</th>
+                                                <th>Provincia</th>
+                                                <th>Distrito</th>
+                                                <th>Ventas</th>
+                                                <th>kilos</th>
+                                                <th>Cantidades</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (isset($this->dataduplicada)) { ?>
+                                                <?php foreach ($this->dataduplicada as $tr) { ?>
+                                                    <tr>
+                                                        <td class="text-center"><?php echo $tr['v_orden'] ?></td>
+                                                        <td class='text-center'>
+                                                            <a id="<?php echo $tr['i_id'] ?>" ruc="<?php echo $tr['v_ruc'] ?>" href='#' style="display: <?php echo $tr['v_ver_duplicado'] ?>;" class='btn btn-danger btn-sm text-black eliminar'>
+                                                                <i class='fa fa-trash-alt'></i>
+                                                            </a>
+                                                        </td>
+                                                        <td class="text-center"><?php echo $tr['i_id'] ?></td>
+                                                        <td class="text-center"><span class="badge bg-<?php echo $tr['v_color_duplicado'] ?>"><?php echo $tr['v_duplicado'] ?></span></td>
+                                                        <td class="text-center"><?php echo $tr['v_ruc'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_razon'] ?></td>
+                                                        <td class="text-center"><?php echo $tr['d_fecha'] ?></td>
+                                                        <td class="text-center"><?php echo $tr['i_producto'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_producto'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['i_cliente'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_cliente'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_tipo_cliente'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_tipo_cliente'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_provincia'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_distrito'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['f_venta'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['f_kilos'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['f_cantidad'] ?></td>
+                                                    </tr>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- MODAL INSERTANDO -->
+    <div class="modal fade" id="modal-insert" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ELIMINANDO DATOS DUPLICADOS...</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Se estan eliminando los datos duplicados, favor de no cerrar la ventana
+                    </p>
+                    <p>
+                        Tiempo transcurrido: <b id="number"></b> segundos
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>

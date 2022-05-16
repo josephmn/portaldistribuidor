@@ -1,0 +1,137 @@
+    <!-- BEGIN: Content-->
+    <div class="app-content content ">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-md-9 col-12 mb-2">
+                    <div class="row breadcrumbs-top">
+                        <div class="col-12">
+                            <h2 class="content-header-title float-left mb-0">
+                                <b><?php foreach ($_SESSION['submenus'] as $menu) { ?>
+                                        <?php if ($this->_controlador == $menu['v_link']) {
+                                            echo $menu['v_descripcion'];
+                                        } else {
+                                            '';
+                                        } ?>
+                                    <?php } ?>
+                                </b>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-8 col-sm-12 col-12">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h4 class="card-title text-white"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<b>ASIGNAR USUARIOS</b></h4>
+                        </div>
+                        <div class="card-body">
+                            <br>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label font-weight-bolder">RUC:</label>
+                                    <input type="number" id="ruc" tabindex="1" class="form-control" value="<?php echo $this->ruc ?>" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label font-weight-bolder">Razon Social:</label>
+                                    <input type="text" id="razon" tabindex="2" class="form-control" value="<?php echo $this->razon ?>" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3 col-12">
+                                    <button id="btnusuarios" type="button" class="btn btn-success btn-block font-weight-bolder" style="color: White;">
+                                        <i class="fas fa-at"></i><span>&nbsp;&nbsp;Añadir usuarios</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12 col-12">
+                                    <table id="example1" class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr class="text-center">
+                                                <th>#</th>
+                                                <th>NOMBRES Y APELLIDOS</th>
+                                                <th>CORREO</th>
+                                                <th>ESTADO</th>
+                                                <th>RUC</th>
+                                                <th>RAZÓN SOCIAL</th>
+                                                <th>#</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php if (isset($this->usuariosdis)) { ?>
+                                                <?php foreach ($this->usuariosdis as $tr) { ?>
+                                                    <tr>
+                                                        <td class="text-center"><?php echo $tr['i_id'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_nombres'] ?></td>
+                                                        <td class="text-center"><?php echo $tr['v_correo'] ?></td>
+                                                        <td class="text-center"><span class="badge bg-<?php echo $tr['v_color_estado'] ?>"><?php echo $tr['v_estado'] ?></span></td>
+                                                        <td class="text-center"><?php echo $tr['v_ruc'] ?></td>
+                                                        <td class="text-left"><?php echo $tr['v_razon'] ?></td>
+                                                        <td class='text-center'>
+                                                            <a id="<?php echo $tr['i_id'] ?>" class="btn btn-danger btn-sm eliminar" style="color:white">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- MODAL AGREGAR USUARIOS A DISTRIBUIDOR-->
+    <div class="modal fade" id="modal-agregar" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">AGREGAR USUARIOS A DISTRIBUIDOR</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>CC:</label>
+                            <select id="xusuarios" class="select2 form-control jscorreocc" multiple>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button id="btnguardar" type="button" class="btn btn-success btn-block">
+                                    <i class="fas fa-save"></i>
+                                    <b>Guardar</b></button>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="col-sm-6">
+                                <button id="btncancelar" type="button" class="btn btn-danger btn-block">
+                                    <i class="fas fa-ban"></i>
+                                    <b>Cancelar</b></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
