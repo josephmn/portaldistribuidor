@@ -1,0 +1,229 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D55BA73-1D06-49F8-95E5-41E9B5C34CCF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WSDistribuidor</RootNamespace>
+    <AssemblyName>WSDistribuidor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44365</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\VDWEB.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="WSDistribuidor.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conexion.cs" />
+    <Compile Include="Controlador\CConsultarEquivalencias.cs" />
+    <Compile Include="Controlador\CConsultarProductosverdum.cs" />
+    <Compile Include="Controlador\CConsultarRucproductos.cs" />
+    <Compile Include="Controlador\CMantEquivalencias.cs" />
+    <Compile Include="Controlador\CViewReporteStock.cs" />
+    <Compile Include="Controlador\CViewReporteEquivalencia.cs" />
+    <Compile Include="Controlador\CViewReporteVentas.cs" />
+    <Compile Include="Controlador\CConsultarDistritoReporte.cs" />
+    <Compile Include="Controlador\CConsultarDepartamentoReporte.cs" />
+    <Compile Include="Controlador\CConsultarArchivosStockRuc.cs" />
+    <Compile Include="Controlador\CConsultarComboUsuarios.cs" />
+    <Compile Include="Controlador\CConsultarUsuariosDistribuidores.cs" />
+    <Compile Include="Controlador\CConsultarDistribuidores.cs" />
+    <Compile Include="Controlador\CConPerfiles.cs" />
+    <Compile Include="Controlador\CConPerfilesAccess.cs" />
+    <Compile Include="Controlador\CConsultaLogin.cs" />
+    <Compile Include="Controlador\CConsultarDuplicidadRuc.cs" />
+    <Compile Include="Controlador\CConsultarStockRuc.cs" />
+    <Compile Include="Controlador\CConsultarArchivosVentasRuc.cs" />
+    <Compile Include="Controlador\CConsultarVentasRuc.cs" />
+    <Compile Include="Controlador\CConsultaTipoArchivo.cs" />
+    <Compile Include="Controlador\CLogin.cs" />
+    <Compile Include="Controlador\CMantCompania.cs" />
+    <Compile Include="Controlador\CMantConfiguracionCorreo.cs" />
+    <Compile Include="Controlador\CMantAsignarDistribuidores.cs" />
+    <Compile Include="Controlador\CMantStock.cs" />
+    <Compile Include="Controlador\CMantVentasDuplicadas.cs" />
+    <Compile Include="Controlador\CMantVentas.cs" />
+    <Compile Include="Controlador\CMantLogin.cs" />
+    <Compile Include="Controlador\CMantPassword.cs" />
+    <Compile Include="Controlador\CMantDistribuidores.cs" />
+    <Compile Include="Controlador\CMantPerfiles.cs" />
+    <Compile Include="Controlador\CMantPerfilesAccesos.cs" />
+    <Compile Include="Controlador\CMantUsuarios.cs" />
+    <Compile Include="Controlador\CMenu.cs" />
+    <Compile Include="Controlador\CRecuperarClave.cs" />
+    <Compile Include="Controlador\CRegistroLogin.cs" />
+    <Compile Include="Controlador\CSubMenu.cs" />
+    <Compile Include="Controlador\CUsuarios.cs" />
+    <Compile Include="Controlador\CRegistroConsulta.cs" />
+    <Compile Include="Controlador\CValidarCodigo.cs" />
+    <Compile Include="Entidad\EConsultarArchivosStockRuc.cs" />
+    <Compile Include="Entidad\EConsultarComboUsuarios.cs" />
+    <Compile Include="Entidad\EConsultarEquivalencias.cs" />
+    <Compile Include="Entidad\EConsultarProductosverdum.cs" />
+    <Compile Include="Entidad\EConsultarRucproductos.cs" />
+    <Compile Include="Entidad\EViewReporteStock.cs" />
+    <Compile Include="Entidad\EViewReporteEquivalencia.cs" />
+    <Compile Include="Entidad\EViewReporteVentas.cs" />
+    <Compile Include="Entidad\EConsultarDistritoReporte.cs" />
+    <Compile Include="Entidad\EConsultarDepartamentoReporte.cs" />
+    <Compile Include="Entidad\EConsultarUsuariosDistribuidores.cs" />
+    <Compile Include="Entidad\EConsultarDistribuidores.cs" />
+    <Compile Include="Entidad\EConfiguracionCorreo.cs" />
+    <Compile Include="Entidad\EConPerfiles.cs" />
+    <Compile Include="Entidad\EConPerfilesAccesos.cs" />
+    <Compile Include="Entidad\EConsultaCompania.cs" />
+    <Compile Include="Entidad\EConsultaLogin.cs" />
+    <Compile Include="Entidad\EConsultarDuplicidadRuc.cs" />
+    <Compile Include="Entidad\EConsultarStockRuc.cs" />
+    <Compile Include="Entidad\EConsultarArchivosVentasRuc.cs" />
+    <Compile Include="Entidad\EConsultarVentasRuc.cs" />
+    <Compile Include="Entidad\EConsultaTipoArchivo.cs" />
+    <Compile Include="Entidad\ELogin.cs" />
+    <Compile Include="Entidad\EMantenimiento.cs" />
+    <Compile Include="Entidad\EMenu.cs" />
+    <Compile Include="Entidad\ERecuperarClave.cs" />
+    <Compile Include="Entidad\ERegistroConsulta.cs" />
+    <Compile Include="Entidad\ERegistroLogin.cs" />
+    <Compile Include="Entidad\ESubMenu.cs" />
+    <Compile Include="Entidad\EUsuarios.cs" />
+    <Compile Include="Entidad\EValidarCodigo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controlador\CConfiguracionCorreo.cs" />
+    <Compile Include="Controlador\CConsultaCompania.cs" />
+    <Compile Include="Vista\VConsultarArchivosStockRuc.cs" />
+    <Compile Include="Vista\VConsultarComboUsuarios.cs" />
+    <Compile Include="Vista\VConsultarEquivalencias.cs" />
+    <Compile Include="Vista\VConsultarProductosverdum.cs" />
+    <Compile Include="Vista\VConsultarRucproductos.cs" />
+    <Compile Include="Vista\VMantEquivalencias.cs" />
+    <Compile Include="Vista\VViewReporteStock.cs" />
+    <Compile Include="Vista\VViewReporteEquivalencia.cs" />
+    <Compile Include="Vista\VViewReporteVentas.cs" />
+    <Compile Include="Vista\VConsultarDistritoReporte.cs" />
+    <Compile Include="Vista\VConsultarDepartamentoReporte.cs" />
+    <Compile Include="Vista\VConsultarUsuariosDistribuidores.cs" />
+    <Compile Include="Vista\VConsultarDistribuidores.cs" />
+    <Compile Include="Vista\VConfiguracionCorreo.cs" />
+    <Compile Include="Vista\VConPerfiles.cs" />
+    <Compile Include="Vista\VConPerfilesAccesos.cs" />
+    <Compile Include="Vista\VConsultaCompania.cs" />
+    <Compile Include="Vista\VConsultaLogin.cs" />
+    <Compile Include="Vista\VConsultarDuplicidadRuc.cs" />
+    <Compile Include="Vista\VConsultarStockRuc.cs" />
+    <Compile Include="Vista\VConsultarArchivosVentasRuc.cs" />
+    <Compile Include="Vista\VConsultarVentasRuc.cs" />
+    <Compile Include="Vista\VConsultaTipoArchivo.cs" />
+    <Compile Include="Vista\VLogin.cs" />
+    <Compile Include="Vista\VMantCompania.cs" />
+    <Compile Include="Vista\VMantConfiguracionCorreo.cs" />
+    <Compile Include="Vista\VMantAsignarDistribuidores.cs" />
+    <Compile Include="Vista\VMantStock.cs" />
+    <Compile Include="Vista\VMantVentasDuplicadas.cs" />
+    <Compile Include="Vista\VMantVentas.cs" />
+    <Compile Include="Vista\VMantLogin.cs" />
+    <Compile Include="Vista\VMantPassword.cs" />
+    <Compile Include="Vista\VMantDistribuidores.cs" />
+    <Compile Include="Vista\VMantPerfiles.cs" />
+    <Compile Include="Vista\VMantPerfilesAccesos.cs" />
+    <Compile Include="Vista\VMantUsuarios.cs" />
+    <Compile Include="Vista\VMenu.cs" />
+    <Compile Include="Vista\VRecuperarClave.cs" />
+    <Compile Include="Vista\VRegistroConsulta.cs" />
+    <Compile Include="Vista\VRegistroLogin.cs" />
+    <Compile Include="Vista\VSubMenu.cs" />
+    <Compile Include="Vista\VUsuarios.cs" />
+    <Compile Include="Vista\VValidarCodigo.cs" />
+    <Compile Include="WSDistribuidor.asmx.cs">
+      <DependentUpon>WSDistribuidor.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61509</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44365/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

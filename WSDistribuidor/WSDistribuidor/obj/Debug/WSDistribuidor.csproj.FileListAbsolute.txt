@@ -1,0 +1,10 @@
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\obj\Debug\WSDistribuidor.csproj.AssemblyReference.cache
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\obj\Debug\WSDistribuidor.csproj.CoreCompileInputs.cache
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.dll.config
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.dll
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.pdb
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\bin\Newtonsoft.Json.dll
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\bin\Newtonsoft.Json.xml
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\obj\Debug\WSDistribuidor.csproj.CopyComplete
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\obj\Debug\WSDistribuidor.dll
+C:\Users\programador.app02\Desktop\WSDistribuidor\WSDistribuidor\obj\Debug\WSDistribuidor.pdb
