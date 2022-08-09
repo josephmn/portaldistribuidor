@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WSDistribuidor</RootNamespace>
     <AssemblyName>WSDistribuidor</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44365</IISExpressSSLPort>
@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,23 +39,26 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net35\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -75,6 +80,7 @@
     <Compile Include="Controlador\CConsultarProductosverdum.cs" />
     <Compile Include="Controlador\CConsultarRucproductos.cs" />
     <Compile Include="Controlador\CMantEquivalencias.cs" />
+    <Compile Include="Controlador\CListaControlDistribuidor.cs" />
     <Compile Include="Controlador\CViewReporteStock.cs" />
     <Compile Include="Controlador\CViewReporteEquivalencia.cs" />
     <Compile Include="Controlador\CViewReporteVentas.cs" />
@@ -117,6 +123,7 @@
     <Compile Include="Entidad\EConsultarEquivalencias.cs" />
     <Compile Include="Entidad\EConsultarProductosverdum.cs" />
     <Compile Include="Entidad\EConsultarRucproductos.cs" />
+    <Compile Include="Entidad\EListaControlDistribuidor.cs" />
     <Compile Include="Entidad\EViewReporteStock.cs" />
     <Compile Include="Entidad\EViewReporteEquivalencia.cs" />
     <Compile Include="Entidad\EViewReporteVentas.cs" />
@@ -152,6 +159,7 @@
     <Compile Include="Vista\VConsultarProductosverdum.cs" />
     <Compile Include="Vista\VConsultarRucproductos.cs" />
     <Compile Include="Vista\VMantEquivalencias.cs" />
+    <Compile Include="Vista\VListaControlDistribuidor.cs" />
     <Compile Include="Vista\VViewReporteStock.cs" />
     <Compile Include="Vista\VViewReporteEquivalencia.cs" />
     <Compile Include="Vista\VViewReporteVentas.cs" />

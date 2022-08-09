@@ -83,6 +83,9 @@ namespace WSDistribuidor
         public VConsultarEquivalencias obEConsultarEquivalencias = new VConsultarEquivalencias();
         public VViewReporteEquivalencia obEViewReporteEquivalencia = new VViewReporteEquivalencia();
 
+        // lista control DWH
+        public VListaControlDistribuidor obEListaControlDistribuidor = new VListaControlDistribuidor();
+
         [WebMethod]
         public string RegistroLogin(String nombres, String apellidos, String correo, String clave, String perfil)
         {
@@ -467,6 +470,15 @@ namespace WSDistribuidor
         {
             List<EViewReporteEquivalencia> lista = new List<EViewReporteEquivalencia>();
             lista = obEViewReporteEquivalencia.ViewReporteEquivalencia(post, ruc);
+            string json = JsonConvert.SerializeObject(lista);
+            return json;
+        }
+
+        [WebMethod]
+        public string ListaControlDistribuidor()
+        {
+            List<EListaControlDistribuidor> lista = new List<EListaControlDistribuidor>();
+            lista = obEListaControlDistribuidor.ListaControlDistribuidor();
             string json = JsonConvert.SerializeObject(lista);
             return json;
         }

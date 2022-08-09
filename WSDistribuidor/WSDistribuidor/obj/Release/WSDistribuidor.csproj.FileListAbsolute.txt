@@ -18,3 +18,13 @@ C:\Users\ALEJANDRO\Desktop\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribui
 C:\Users\ALEJANDRO\Desktop\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.csproj.CopyComplete
 C:\Users\ALEJANDRO\Desktop\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.dll
 C:\Users\ALEJANDRO\Desktop\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.pdb
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.dll.config
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.dll
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\bin\WSDistribuidor.pdb
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\bin\Newtonsoft.Json.dll
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\bin\Newtonsoft.Json.xml
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.csproj.AssemblyReference.cache
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.csproj.CoreCompileInputs.cache
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.csproj.CopyComplete
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.dll
+C:\Apache24\htdocs\portaldistribuidor\WSDistribuidor\WSDistribuidor\obj\Release\WSDistribuidor.pdb
